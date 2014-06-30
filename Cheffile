@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'mysql'
+cookbook 'postgresql'
+cookbook 'database'
+cookbook 'sudo'
+cookbook 'nginx'
+cookbook 'redisio', git: 'https://github.com/nazarhussain/redisio.git'
+cookbook 'ark', git: 'https://github.com/nazarhussain/ark.git'
+cookbook 'java'
+cookbook 'rbenv', '~> 1.4.0'
+cookbook 'logrotate'
+cookbook 'elasticsearch'
+cookbook 'bluepill'
+
+# cookbook 'chef-client'
+
+# cookbook 'apache2', '>= 1.0.0'
+
+# cookbook 'rvm',
+#   :git => 'https://github.com/fnichol/chef-rvm'
+
+# cookbook 'postgresql',
+#   :git => 'https://github.com/findsyou/cookbooks',
+#   :ref => 'postgresql-improvements'
+

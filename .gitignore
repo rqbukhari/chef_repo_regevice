@@ -1,0 +1,16 @@
+.rake_test_cache
+locomotive.tar.gz
+recipes.tgz
+/config/servers.rb
+bin/
+cookbooks/
+vagrant/.vagrant
+
+config/servers.rb.old.rb
+
+config/servers_air.rb
+
+nodes/*.json
+!nodes/*_sample.json
+
+/tmp
