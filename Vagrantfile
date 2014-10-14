@@ -89,7 +89,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_role "role[base]"
     chef.add_role "role[mysql]"
     chef.add_role "role[redis]"
-    chef.add_role "role[elasticsearch]"
     chef.add_role "role[ruby]"
     chef.add_role "role[web]"
     chef.add_role "role[rails]"
@@ -97,33 +96,29 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       :base => {
         :users => ['deploy'],
         :keys => [
-          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4dNBNSSGTlv3+/YyDKHPFvd0T7DpM08b1nBN9Ca3fbZPquQ5UPmlRzywqyr84rgzq24UjjrXFRZU5W930pDCkp7Q7HwsJXS0ADKcTdcq1ibyUM/DlrBUEM0tyZGFinwvIHKGS+RN5dcqpjd/XJPBe5dCn6vPY1OK6kcZXg/VSVVN3SYV1j5d52LqJhlCfT/jm4LfCwQKN5sbGUWWv7naDJZNn0i+gn6CQiv9tCQdWshpWbjUUY9pRfXxrLO25/Z7iK58BfLoq9WUMAKVd0aZ8sJ+6dYlTfK7ZcNwlN3vup7khCZCaYtmuGsZWaglLzDld01Jfk5fqyDsMCMbS2/L5 nazarhussain@gmail.com"
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCavcwugB2hS9AbxINrCaeL1r8CuKcwUsgFMkJihhcGMYhWDQzC32vJxRQN9b8DEtjiGfe1dOQTRXAKrj/fgjhggqAQ16MaWaeKeR34zINgu+phNJlPb2jyKMHx39Za5jHAc43m8EmvbPKHchEhTbgKyDWp6R4AROJzvh1cJ/GXGBB1RI3VYDo+7uTgX8KePKrtR5nLOlDYusfJ5BVlZl0Y2TrrpMRiaP1wxpMjsJjvTxZTwhQQXLt5vAbcAqs882KzzcIpYIkLOAi2kQ/C+Zhck78GCwGASpG0c/z8ertTFFXMpjy6v9hr+XbO9i74j1/OHhYGOP/Yg5OkbtnV4EMH rehmat.qadir@nxb.com.pk"
         ]
       },
       :ruby => {
-        :version => '1.9.3-p448'
+        :version => '2.1.3'
       },
       :web => {
         :server => "nginx"
       },
       :mysql => {
-        :password => "This!D3DfePaswr4",
+        :password => "NuYX9AtyTOFv",
         :users => {
           :deploy => {
-            :password => "This!D3DfePaswr4deploy",
+            :password => "7UBTXQmPV!h0c4D+F3Ca",
             :databases => ["deploy_test"]
           }
         }
       },
-      :elasticsearch => {
-        :cluster  => { :name => "elasticsearch_base" },
-        :version => "1.0.1"
-      },
       :rails => {
         :application_root => "/home/deploy/apps",
         :applications => {
-          :meeting_king => {
-            :domain_names => ['test.vagrant.com', 't.vagrant.com'],
+          :regdevice => {
+            :domain_names => ['regdevice.vagrant.com', 'rd.vagrant.com'],
             :packages => ['memcached', 'nodejs', 'htop'],
             :rails_env => "production",
             :database_info => {

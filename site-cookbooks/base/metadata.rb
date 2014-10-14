@@ -1,6 +1,6 @@
 name             'base'
-maintainer       'Microgigz'
-maintainer_email 'nazarhussain@gmail.com'
+maintainer       'Shaoor'
+maintainer_email 'rq@regdevice.com'
 license          'All rights reserved'
 description      'Installs/Configures base machines uesrs settings'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
@@ -12,7 +12,6 @@ depends "sudo"
 depends "apt"
 depends 'openssl'
 depends "mysql"
-depends "postgresql"
 depends "database"
 depends 'rbenv'
 depends 'nginx'

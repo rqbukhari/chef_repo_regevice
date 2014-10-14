@@ -1,3 +1,3 @@
 
 
-default["ruby"]["version"] = "1.9.3-p448"
+default["ruby"]["version"] = "2.1.3"
