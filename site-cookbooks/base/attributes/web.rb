@@ -1,3 +1,1 @@
-
-
-default["web"]["server"] = ["nginx", "apache"].first
+default['web']['server'] = ['nginx', 'apache'].first

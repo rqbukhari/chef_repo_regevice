@@ -1,3 +1,1 @@
-
-
-default["ruby"]["version"] = "2.1.3"
+default['ruby']['version'] = '2.1.3'

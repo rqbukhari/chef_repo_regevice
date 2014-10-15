@@ -20,7 +20,7 @@ end
 applications_root = node[:rails][:applications_root]
 applications = node[:rails][:applications]
 
-# Installing application specifc packages
+# Installing application specific packages
 if applications
 	applications.each do |app, app_info|
 		if app_info['packages']
@@ -35,14 +35,14 @@ end
 # Setting up applications
 if applications
 	applications.each do |app, app_info|
-		rails_env = app_info['rails_env'] || "production"
-		deploy_user = app_info['deploy_user'] || "deploy"
+		rails_env = app_info['rails_env'] || 'production'
+		deploy_user = app_info['deploy_user'] || 'deploy'
 		app_env = app_info['app_env'] || {}
 		app_env['RAILS_ENV'] = rails_env
 
 		rbenv_ruby node[:ruby][:version]
 
-		rbenv_gem "bundler" do
+		rbenv_gem 'bundler' do
 			ruby_version node[:ruby][:version]
 		end
 
@@ -77,7 +77,7 @@ if applications
 				owner deploy_user
 				group deploy_user
 				mode 0600
-				source "database.yml.erb"
+				source 'database.yml.erb'
 				variables :database_info => db_info, :rails_env => rails_env
 			end
 		end
@@ -107,7 +107,7 @@ if applications
 		if node["web"]["server"] == "nginx"
 			# Enable and set the Nginx
 			template "/etc/nginx/sites-available/#{app}.conf" do
-				source "app_nginx.conf.erb"
+				source 'app_nginx.conf.erb'
 				variables :name => app, :domain_names => app_info['domain_names'], :applications_root=> applications_root, :enable_ssl => File.exists?("#{applications_root}/#{app}/shared/config/certificate.crt")
 				notifies :reload, resources(:service => "nginx")
 			end
@@ -116,7 +116,7 @@ if applications
 		# Setting up puma configuration
 		template "#{applications_root}/#{app}/shared/config/puma.rb" do
 			mode 0644
-			source "app_puma.rb.erb"
+			source 'app_puma.rb.erb'
 			variables(
 				:name => app,
 				:rails_env=>rails_env,
@@ -161,7 +161,7 @@ if applications
 		end
 
 		logrotate_app "rails-#{app}" do
-			cookbook "logrotate"
+			cookbook 'logrotate'
 			path ["#{applications_root}/#{app}/current/log/*.log"]
 			frequency "daily"
 			rotate 14

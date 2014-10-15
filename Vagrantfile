@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-VAGRANTFILE_API_VERSION = "2"
+VAGRANTFILE_API_VERSION = '2'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # All Vagrant configuration is done here. The most common configuration
@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu_server"
+  config.vm.box = 'ubuntu_server'
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network 'forwarded_port', guest: 80, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -82,16 +82,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
-  config.vm.provision "chef_solo" do |chef|
-    chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
-    chef.roles_path = "./roles"
-    chef.data_bags_path = "./data_bags"
-    chef.add_role "role[base]"
-    chef.add_role "role[mysql]"
-    chef.add_role "role[redis]"
-    chef.add_role "role[ruby]"
-    chef.add_role "role[web]"
-    chef.add_role "role[rails]"
+  config.vm.provision 'chef_solo' do |chef|
+    chef.cookbooks_path = ['./cookbooks', './site-cookbooks']
+    chef.roles_path = './roles'
+    chef.data_bags_path = './data_bags'
+    chef.add_role 'role[base]'
+    chef.add_role 'role[mysql]'
+    chef.add_role 'role[redis]'
+    chef.add_role 'role[ruby]'
+    chef.add_role 'role[web]'
+    chef.add_role 'role[rails]'
     chef.json = {
       :base => {
         :users => ['deploy'],
@@ -103,24 +103,24 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         :version => '2.1.3'
       },
       :web => {
-        :server => "nginx"
+        :server => 'nginx'
       },
       :mysql => {
-        :password => "NuYX9AtyTOFv",
+        :password => 'NuYX9AtyTOFv',
         :users => {
           :deploy => {
-            :password => "7UBTXQmPV!h0c4D+F3Ca",
-            :databases => ["deploy_test"]
+            :password => '7UBTXQmPV!h0c4D+F3Ca',
+            :databases => ['deploy_test']
           }
         }
       },
       :rails => {
-        :application_root => "/home/deploy/apps",
+        :application_root => '/home/deploy/apps',
         :applications => {
           :regdevice => {
             :domain_names => ['regdevice.vagrant.com', 'rd.vagrant.com'],
             :packages => ['memcached', 'nodejs', 'htop'],
-            :rails_env => "production",
+            :rails_env => 'production',
             :database_info => {
               :database => 'deploy_test'
             }

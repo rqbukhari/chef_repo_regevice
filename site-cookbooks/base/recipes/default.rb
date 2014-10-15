@@ -54,4 +54,4 @@ node.normal[:authorization] = {
 		]
 	}
 }
-include_recipe "sudo"
+include_recipe 'sudo'

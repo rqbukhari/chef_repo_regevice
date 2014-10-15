@@ -21,7 +21,6 @@ SITE
       yum (~> 3.0)
       yum-epel (>= 0.0.0)
     homebrew (1.5.4)
-    java (1.21.2)
     logrotate (1.5.0)
     mysql (4.1.2)
       build-essential (~> 1.4)
@@ -52,7 +51,6 @@ SITE
       yum (~> 3.0)
       yum-epel (>= 0.0.0)
     sudo (2.5.2)
-    ulimit (0.3.2)
     windows (1.30.0)
       chef_handler (>= 0.0.0)
     xfs (1.1.0)
@@ -60,30 +58,12 @@ SITE
     yum-epel (0.3.4)
       yum (~> 3.0)
 
-GIT
-  remote: https://github.com/nazarhussain/ark.git
-  ref: master
-  sha: b1fb5a28ccdc3104d90f1dda82b59e7c24826fcd
-  specs:
-    ark (0.7.1)
-
-GIT
-  remote: https://github.com/nazarhussain/redisio.git
-  ref: master
-  sha: 954fdb6fdabb7f80f4c86257c7f292a16e663e46
-  specs:
-    redisio (1.7.1)
-      ulimit (>= 0.1.2)
-
 DEPENDENCIES
-  ark (>= 0)
   bluepill (>= 0)
   database (>= 0)
-  java (>= 0)
   logrotate (>= 0)
   mysql (>= 0)
   nginx (>= 0)
   rbenv (~> 1.4.0)
-  redisio (>= 0)
   sudo (>= 0)
 
