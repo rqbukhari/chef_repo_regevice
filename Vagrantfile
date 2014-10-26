@@ -96,7 +96,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       :base => {
         :users => ['deploy'],
         :keys => [
-          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCavcwugB2hS9AbxINrCaeL1r8CuKcwUsgFMkJihhcGMYhWDQzC32vJxRQN9b8DEtjiGfe1dOQTRXAKrj/fgjhggqAQ16MaWaeKeR34zINgu+phNJlPb2jyKMHx39Za5jHAc43m8EmvbPKHchEhTbgKyDWp6R4AROJzvh1cJ/GXGBB1RI3VYDo+7uTgX8KePKrtR5nLOlDYusfJ5BVlZl0Y2TrrpMRiaP1wxpMjsJjvTxZTwhQQXLt5vAbcAqs882KzzcIpYIkLOAi2kQ/C+Zhck78GCwGASpG0c/z8ertTFFXMpjy6v9hr+XbO9i74j1/OHhYGOP/Yg5OkbtnV4EMH rehmat.qadir@nxb.com.pk"
+          ""
         ]
       },
       :ruby => {
